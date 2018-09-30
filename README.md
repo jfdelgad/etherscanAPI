@@ -16,7 +16,7 @@ myapi = etherscan('myapikey','networkname')
 ```
 Use networkname ='' for mainnet.<br>
 Use networkname ='ropsten' for Ropsten.<br>
-Use networkname ='rinkeby' for rinkeby.<br>
+Use networkname ='rinkeby' for Rinkeby.<br>
 <br>
 
 ## Methods Description:
@@ -46,31 +46,31 @@ Returns information about a block by block number.<br>
 * **getBlockTransactionCountByNumber(number)**<br>
 Returns the number of transactions in a block from a block matching the given block number.<br>
 
-* **getUncleByBlockNumberAndIndex(self, number, index)**<br>
+* **getUncleByBlockNumberAndIndex(number, index)**<br>
 Returns information about a uncle by block number.<br>
 
-* **getTransactionByHash(self, txhash)**<br>
+* **getTransactionByHash(txhash)**<br>
 Returns the information about a transaction requested by transaction hash.<br>
 
-* **getTransactionByBlockNumberAndIndex(self, number, index)**<br>
+* **getTransactionByBlockNumberAndIndex(number, index)**<br>
 Returns information about a transaction by block number and transaction index position.<br>
 
-* **getTransactionCount(self, address)**<br>
+* **getTransactionCount(address)**<br>
 Returns the number of transactions sent from an address.<br>
 
-* **sendRawTransaction(self, signedTx)**<br>
+* **sendRawTransaction(signedTx)**<br>
 Returns the receipt of a transaction by transaction hash.<br>
 
-* **def getTransactionReceipt(self, txhash)**<br>
+* **def getTransactionReceipt(txhash)**<br>
 Creates new message call transaction or a contract creation for signed transactions.<br>
 
-* **call(self, to, data)**<br>
+* **call(to, data)**<br>
 Executes a new message call immediately without creating a transaction on the blockchain.<br>
 
-* **getCode(self, address)**<br>
+* **getCode(address)**<br>
 Returns code at a given address.<br>
 
-* **getStorageAt(self, address, position)**<br>
+* **getStorageAt(address, position)**<br>
 Returns the value from a storage position at a given address.<br>
 
 * **gasPrice()**<br>
