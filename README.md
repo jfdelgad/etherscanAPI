@@ -18,9 +18,10 @@ All methods return the field *Result* of the request as described in [etherscan 
 from ethersacanAPI import etherscan
 myapi = etherscan('myapikey','networkname')
 ```
-Use networkname ='' for mainnet.<br>
+Use networkname ='mainnet' for mainnet.<br>
 Use networkname ='ropsten' for Ropsten.<br>
 Use networkname ='rinkeby' for Rinkeby.<br>
+Use networkname ='kovan' for Kovan.<br>
 <br>
 
 ## Methods Description:
