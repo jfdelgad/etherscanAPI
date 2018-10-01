@@ -22,11 +22,30 @@ Use networkname ='rinkeby' for Rinkeby.<br>
 ## Methods Description:
 
 ### Accounts: [Details](https://etherscan.io/apis#accounts)
-* **getBalance(address)**<br>
-Get the balance of an account(EOA or Contract)
+* **getBalance(address)**
+Get Ether Balance for a single Address.<br>
+ 
+* **getBalanceMulti(address)**
+Get Ether Balance for multiple Addresses in a single call.<br>
+Address must be a list of addresses.<br>
 
-* **getTransactions(address, fromblock, toblock)**<br>
-Get the list of "normal" transations.<br><br>
+* **getTransactions(address, fromblock, toblock)**
+Get a list of 'Normal' Transactions By Address.<br>
+
+* **getInternalTransactionsByAddress(address, fromblock, toblock)**
+Get a list of 'Internal' Transactions by Address.<br>
+
+* **getInternalTransactionsByTxHash(txhash, fromblock, toblock)**
+ Get "Internal Transactions" by Transaction Hash.<br>
+  
+* **getERC20TransfersByAddress(address, fromblock, toblock)**
+Get a list of "ERC20 - Token Transfer Events" by Address.<br>
+    
+* **getERC20TransfersByContract(contractAddress, address, fromblock, toblock)**
+Get a list of "ERC20 - Token Transfer Events" by account Address and contract address.<br>
+
+* **getMinedBlocks(address)**
+Get list of Blocks Mined by Address.<br><br>
 
 
 
