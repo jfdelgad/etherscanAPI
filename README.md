@@ -154,7 +154,7 @@ Get ETHER LastPrice Price.<br>
 from etherscanAPI import etherscan
 
 apikey = 'yourAPIkey'
-myapi = etherscan(apikey, '') #
+myapi = etherscan(apikey, 'mainnet') #
 
 # Get the balance of an account
 address = '0xde0b295669a9fd93d5f28d9ec85e40f4cb697bae'
@@ -165,7 +165,7 @@ myapi.getBalance(address)
 # topicsOperator should be an empty dictionary if only one topic is used.
 topics = {'topic0':'0xf63780e752c6a54a94fc52715dbc5518a3b4c3c2833d301a204226548a2a8545'}
 topicsOperator = {}
-myapi.getLogs(379224,400000,'', topics, topicsOperator)
+myapi.getLogs(379224,400000,'0x33990122638b9132ca29c723bdf037f1a891a70c', topics, topicsOperator)
 
 
 # Get contract logs using two topics
