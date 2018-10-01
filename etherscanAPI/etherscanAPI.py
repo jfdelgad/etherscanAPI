@@ -10,7 +10,7 @@ class etherscan:
     def __init__(self, apikey, network):
         self.network = network
         self.apikey = apikey
-        if network=="":
+        if network=='mainnet':
             self.apipath = 'https://api.etherscan.io/api?'
         else:
             self.apipath = 'https://api' + '-' + network + '.etherscan.io/api?' 
