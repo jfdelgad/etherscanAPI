@@ -11,7 +11,7 @@ All methods return the field *Result* of the request as described in [etherscan 
 
 ## Usage:
 ``` python
-import ethersacanAPI as etherscan
+from ethersacanAPI import etherscan
 myapi = etherscan('myapikey','networkname')
 ```
 Use networkname ='' for mainnet.<br>
@@ -80,7 +80,7 @@ Returns the current price per gas in wei.<br>
 Makes a call or transaction, which won't be added to the blockchain and returns the used gas, which can be used for estimating the used gas.<br><br>
 
 
-### Logs; [Details](https://etherscan.io/apis#logs)
+### Logs: [Details](https://etherscan.io/apis#logs)
 * **getLogs(self, fromBlock, toBlock, address, topics, topicsOperator)**<br>
 `topics` is a dictionary with possible entries `topic0`, `topic1`, `topic2`<br>
 `topicsOperator` is a dictionary with possible value: `topics0_1_op`, `topics0_2_op`, and `topics1_2_op`.<br>
@@ -91,7 +91,7 @@ It determines the type of filter applied to the topics. See the exemples below f
 ## Examples:
 
 ```python
-from etherscanAPI import stherscan
+from etherscanAPI import etherscan
 
 apikey = 'yourAPIkey'
 myapi = etherscan(apikey, '') #
