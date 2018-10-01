@@ -48,9 +48,20 @@ class etherscan:
     def getMinedBlocks(self, address):
         payload = {'module':'account', 'action':'getminedblocks', 'address':address,  'blocktype':'blocks', 'apykey':self.apikey}
         return requests.get(self.apipath, params=payload).json()['result']
-    
-    
-    
+
+
+
+    # Contracts API
+    def getContractABI(self, address):
+        payload = {'module':'contract', 'action':'getabi', 'address':address, 'apykey':self.apikey}
+        return requests.get(self.apipath, params=payload).json()['result']
+
+    def getSourceCode(self, address):
+        payload = {'module':'contract', 'action':'getsourcecode', 'address':address, 'apykey':self.apikey}
+        return requests.get(self.apipath, params=payload).json()['result']
+
+
+
     # Transactions API
     def getReceiptStatus(self, txhash):
         payload = {'module':'transaction', 'action':'gettxreceiptstatus', 'txhash':txhash, 'apykey':self.apikey}
@@ -61,6 +72,12 @@ class etherscan:
         return requests.get(self.apipath, params=payload).json()['result']
     
     
+    
+    # Blocks
+    def getBlockRewards(self, blockNumber):
+        payload = {'module':'block', 'action':'getblockreward', 'blockno':blockNumber, 'apykey':self.apikey}
+        return requests.get(self.apipath, params=payload).json()['result']
+
     
     
     # GETH/PARITY Proxy API
@@ -121,6 +138,7 @@ class etherscan:
         return requests.get(self.apipath, params=payload).json()['result']
 
 
+
     # EVENT logs
     def getLogs(self, fromBlock, toBlock, address, topics, topicsOperator): 
         payload = {'module':'logs', 'action':'getLogs', 'fromBlock':fromBlock, 'toBlock':toBlock, 'apykey':self.apikey}
@@ -128,4 +146,24 @@ class etherscan:
         return requests.get(self.apipath, params=payload).json()['result']
  
 
+    
+    # Token
+    def getTokenTotalSupply(self, contractAddress):
+        payload = {'module':'account', 'action':'tokensupply', 'contractaddress':contractAddress, 'apykey':self.apikey}
+        return requests.get(self.apipath, params=payload).json()['result']
 
+    def getTokenBalance(self, address, contractAddress):
+        payload = {'module':'account', 'action':'tokenbalance', 'contractaddress':contractAddress, 'address':address, 'tag':'latest', 'apykey':self.apikey}
+        return requests.get(self.apipath, params=payload).json()['result']
+    
+
+
+    # Stats
+    def getEtherSupply(self):
+        payload = {'module':'stats', 'action':'ethsupply', 'apykey':self.apikey}
+        return requests.get(self.apipath, params=payload).json()['result']
+
+    def getEtherPrice(self):
+        payload = {'module':'stats', 'action':'ethprice', 'apykey':self.apikey}
+        return requests.get(self.apipath, params=payload).json()['result']
+    
