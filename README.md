@@ -51,7 +51,10 @@ Get list of Blocks Mined by Address.<br><br>
 
 ### Transactions: [Details](https://etherscan.io/apis#transactions)
 * **getReceiptStatus(txhash)**<br>
-Return the status of a transaction with transaction-hash = txhash.<br><br>
+Check Transaction Receipt Status (Only applicable for Post Byzantium fork transactions).<br>
+
+* **getContractTxStatus(txhash)**<br>
+Check Contract Execution Status (if there was an error during contract execution).<br><br>
 
 
 
