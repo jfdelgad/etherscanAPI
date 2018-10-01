@@ -168,7 +168,7 @@ topicsOperator = {}
 myapi.getLogs(379224,400000,'', topics, topicsOperator)
 
 
-# Get contract logs with using two topics
+# Get contract logs using two topics
 # topicsOperator is empty if only one topic is used
 topics = {'topic0':'0xf63780e752c6a54a94fc52715dbc5518a3b4c3c2833d301a204226548a2a8545',
           'topic1':'0x72657075746174696f6e00000000000000000000000000000000000000000000'}
