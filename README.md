@@ -22,35 +22,35 @@ Use networkname ='rinkeby' for Rinkeby.<br>
 ## Methods Description:
 
 ### Accounts: [Details](https://etherscan.io/apis#accounts)
-* **getBalance(address)**
+* **getBalance(address)**<br>
 Get Ether Balance for a single Address.<br>
  
-* **getBalanceMulti(address)**
+* **getBalanceMulti(address)**<br>
 Get Ether Balance for multiple Addresses in a single call.<br>
 Address must be a list of addresses.<br>
 
-* **getTransactions(address, fromblock, toblock)**
+* **getTransactions(address, fromblock, toblock)**<br>
 Get a list of 'Normal' Transactions By Address.<br>
 
-* **getInternalTransactionsByAddress(address, fromblock, toblock)**
+* **getInternalTransactionsByAddress(address, fromblock, toblock)**<br>
 Get a list of 'Internal' Transactions by Address.<br>
 
-* **getInternalTransactionsByTxHash(txhash, fromblock, toblock)**
+* **getInternalTransactionsByTxHash(txhash, fromblock, toblock)**<br>
  Get "Internal Transactions" by Transaction Hash.<br>
   
-* **getERC20TransfersByAddress(address, fromblock, toblock)**
+* **getERC20TransfersByAddress(address, fromblock, toblock)**<br>
 Get a list of "ERC20 - Token Transfer Events" by Address.<br>
     
-* **getERC20TransfersByContract(contractAddress, address, fromblock, toblock)**
+* **getERC20TransfersByContract(contractAddress, address, fromblock, toblock)**<br>
 Get a list of "ERC20 - Token Transfer Events" by account Address and contract address.<br>
 
-* **getMinedBlocks(address)**
+* **getMinedBlocks(address)**<br>
 Get list of Blocks Mined by Address.<br><br>
 
 
 
 ### Transactions: [Details](https://etherscan.io/apis#transactions)
-* **getReceiptStatus(txhash)**
+* **getReceiptStatus(txhash)**<br>
 Return the status of a transaction with transaction-hash = txhash.<br><br>
 
 
