@@ -1,11 +1,15 @@
-# etherscanAPI
+# etherscanAPI Python
 A python wrapper for EtherScan API. (unofficial)
 
 This library allows to interface with etherscan. It implements the requests to the modules:
 * Accounts.
+* Contracts.
 * Transactions.
+* Blocks.
 * GETH / PARITY Proxy.
 * Logs.
+* Tokens.
+* Stats.
 
 All methods return the field *Result* of the request as described in [etherscan website](https://etherscan.io/apis).
 
@@ -48,6 +52,14 @@ Get a list of "ERC20 - Token Transfer Events" by account Address and contract ad
 Get list of Blocks Mined by Address.<br><br>
 
 
+### Contracts: [Details](https://etherscan.io/apis#contracts)
+* **getContractABI(address)**<br>
+Get Contract ABI for Verified Contract Source Codes.<br>
+
+* **getSourceCode(address)**<br>
+Get Contract Source Code for Verified Contract Source Codes.<br><br>
+
+
 
 ### Transactions: [Details](https://etherscan.io/apis#transactions)
 * **getReceiptStatus(txhash)**<br>
@@ -56,6 +68,11 @@ Check Transaction Receipt Status (Only applicable for Post Byzantium fork transa
 * **getContractTxStatus(txhash)**<br>
 Check Contract Execution Status (if there was an error during contract execution).<br><br>
 
+
+
+### Blocks: [Details](https://etherscan.io/apis#blocks)
+* **getBlockRewards(blockNumber)**<br>
+Get Block And Uncle Rewards by BlockNo.<br><br>
 
 
 ### Geth/Parity proxy: [Details](https://etherscan.io/apis#proxy)
@@ -106,7 +123,27 @@ Makes a call or transaction, which won't be added to the blockchain and returns 
 * **getLogs(self, fromBlock, toBlock, address, topics, topicsOperator)**<br>
 `topics` is a dictionary with possible entries `topic0`, `topic1`, `topic2`<br>
 `topicsOperator` is a dictionary with possible value: `topics0_1_op`, `topics0_2_op`, and `topics1_2_op`.<br>
-It determines the type of filter applied to the topics. See the exemples below for details of usage.
+It determines the type of filter applied to the topics. See the exemples below for details of usage.<br><br>
+
+
+
+### Token: [Details](https://etherscan.io/apis#tokens)
+* **getTokenTotalSupply(contractAddress)**<br>
+Get ERC20-Token TotalSupply by ContractAddress
+
+* **getTokenBalance(address, contractAddress)**<br>
+Get ERC20-Token Account Balance for TokenContractAddress.<br><br>
+ 
+
+
+### Stats: [Details]()
+* **getEtherSupply()**<br>
+Get Total Supply of Ether.<br>
+
+
+* **getEtherPrice(self)**<br>
+Get ETHER LastPrice Price.<br>
+
 
 
 
