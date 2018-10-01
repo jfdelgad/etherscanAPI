@@ -21,15 +21,42 @@ class etherscan:
         payload = {'module':'account', 'action':'balance', 'address':address, 'tag':'latest', 'apykey':self.apikey}
         return requests.get(self.apipath, params=payload).json()['result']
     
+    def getBalanceMulti(self, address):
+        payload = {'module':'account', 'action':'balancemulti', 'address':','.join(address), 'tag':'latest', 'apykey':self.apikey}
+        return requests.get(self.apipath, params=payload).json()['result']
+    
     def getTransactions(self, address, fromblock, toblock):
         payload = {'module':'account', 'action':'txlist', 'address':address, 'startblock':fromblock, 'endblock':toblock, 'sort':'asc', 'apykey':self.apikey}
         return requests.get(self.apipath, params=payload).json()['result']
+    
+    def getInternalTransactionsByAddress(self, address, fromblock, toblock):
+        payload = {'module':'account', 'action':'txlistinternal', 'address':address, 'startblock':fromblock, 'endblock':toblock, 'sort':'asc', 'apykey':self.apikey}
+        return requests.get(self.apipath, params=payload).json()['result']
 
+    def getInternalTransactionsByTxHash(self, txhash, fromblock, toblock):
+        payload = {'module':'account', 'action':'txlistinternal', 'txhash':txhash, 'apykey':self.apikey}
+        return requests.get(self.apipath, params=payload).json()['result']
+    
+    def getERC20TransfersByAddress(self, address, fromblock, toblock):
+        payload = {'module':'account', 'action':'tokentx', 'address':address, 'startblock':fromblock, 'endblock':toblock, 'sort':'asc', 'apykey':self.apikey}
+        return requests.get(self.apipath, params=payload).json()['result']
+    
+    def getERC20TransfersByContract(self, contractAddress, address, fromblock, toblock):
+        payload = {'module':'account', 'action':'tokentx', 'address':address,  'contractaddress':contractAddress, 'startblock':fromblock, 'endblock':toblock, 'sort':'asc', 'apykey':self.apikey}
+        return requests.get(self.apipath, params=payload).json()['result']
+
+    def getMinedBlocks(self, address):
+        payload = {'module':'account', 'action':'getminedblocks', 'address':address,  'blocktype':'blocks', 'apykey':self.apikey}
+        return requests.get(self.apipath, params=payload).json()['result']
+    
+    
     
     # Transactions API
     def getReceiptStatus(self, txhash):
         payload = {'module':'transaction', 'action':'getstatus', 'txhash':txhash, 'apykey':self.apikey}
         return requests.get(self.apipath, params=payload).json()['result']
+    
+    
     
     
     # GETH/PARITY Proxy API
