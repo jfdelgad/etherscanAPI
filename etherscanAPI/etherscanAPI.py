@@ -53,6 +53,10 @@ class etherscan:
     
     # Transactions API
     def getReceiptStatus(self, txhash):
+        payload = {'module':'transaction', 'action':'gettxreceiptstatus', 'txhash':txhash, 'apykey':self.apikey}
+        return requests.get(self.apipath, params=payload).json()['result']
+    
+    def getContractTxStatus(self, txhash):
         payload = {'module':'transaction', 'action':'getstatus', 'txhash':txhash, 'apykey':self.apikey}
         return requests.get(self.apipath, params=payload).json()['result']
     
